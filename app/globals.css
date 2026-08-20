@@ -74,6 +74,40 @@ textarea {
   top: 16px;
 }
 
+.compare-switch {
+  align-items: center;
+  background: #9588e8;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  bottom: 20px;
+  box-shadow: 0 14px 36px rgba(20, 42, 85, 0.22);
+  color: #111111;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  font-weight: 600;
+  gap: 4px 8px;
+  line-height: 1.2;
+  max-width: 210px;
+  padding: 12px 14px;
+  position: fixed;
+  right: 20px;
+  transition: transform 180ms ease;
+  z-index: 100;
+}
+
+.compare-switch > span:first-child {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.compare-switch:hover,
+.compare-switch:focus-visible {
+  transform: translateY(-3px);
+}
+
 .notice-bar {
   background: var(--navy-deep);
   color: #d8e3f5;

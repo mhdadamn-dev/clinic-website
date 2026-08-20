@@ -102,6 +102,11 @@ export default function Home() {
         Langkau ke kandungan utama
       </a>
 
+      <a className="compare-switch" href="/mydna">
+        <span>Versi baharu</span>
+        Lihat rekaan MyDNA <span aria-hidden="true">↗</span>
+      </a>
+
       <div className="notice-bar">
         <div className="shell notice-inner">
           <p>
