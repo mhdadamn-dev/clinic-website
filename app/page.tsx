@@ -39,16 +39,14 @@ const faqs = [
   ["How do I know which treatment is suitable for me?", "A consultation allows the dentist to assess your condition, explain available options, and recommend suitable next steps."],
 ];
 
-function GuideLabel({ children }: { children: React.ReactNode }) {
-  return <span className="guide-label">{children}</span>;
+function GuideLabel({ children: _children }: { children: React.ReactNode }) {
+  return null;
 }
 
 export default function Home() {
   return (
     <main id="top">
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <div className="mockup-key"><span /> Layout guides: content box / padding</div>
-
       <header className="site-header section-frame">
         <GuideLabel>header · 24px padding</GuideLabel>
         <div className="shell header-inner inner-frame">
@@ -57,8 +55,8 @@ export default function Home() {
             <span className="brand-name"><strong>Klinik Pergigian</strong><small>Dr Syazwan</small></span>
           </a>
           <nav className="desktop-nav" aria-label="Main navigation">
-            <a href="#services">Services</a><a href="#locations">Locations</a>
-            <a href="#education">Education</a><a href="#about">About</a>
+            <a href="#top">Home</a><a href="#about">About</a>
+            <a href="#services">Services</a><a href="#education">Education</a>
           </nav>
           <a className="button button-small" href={whatsapp}>Speak to Our Care Team <span aria-hidden="true">↗</span></a>
           <details className="mobile-menu"><summary aria-label="Open menu">Menu</summary><nav><a href="#services">Services</a><a href="#locations">Locations</a><a href="#education">Education</a><a href="#about">About</a><a href={whatsapp}>WhatsApp</a></nav></details>
@@ -67,16 +65,16 @@ export default function Home() {
 
       <section className="hero section-frame" id="main-content">
         <GuideLabel>hero · 112px vertical padding</GuideLabel>
-        <div className="shell hero-grid inner-frame">
+        <div className="shell hero-stage inner-frame">
+          <img className="hero-photo" src="/kpds-hero.png" alt="Dental professional speaking with a patient in a calm modern clinic" />
+          <div className="hero-shade" aria-hidden="true" />
           <div className="hero-copy content-frame">
             <GuideLabel>copy · 40px padding</GuideLabel>
-            <p className="eyebrow">DENTAL CLINIC SUNGAI PETANI</p>
-            <h1>Modern dental care in Sungai Petani.</h1>
-            <p className="hero-statement">Thoughtful, structured and patient-focused.</p>
-            <p className="lead">From routine dental care to braces, aligners, and dental implants, we focus on careful diagnosis, clear planning, and long-term oral health — without pressure or unnecessary treatment.</p>
+            <div className="hero-kicker"><span className="asterisk" aria-hidden="true">✣</span><p>Thoughtful, structured and patient-focused care for every stage of your smile.</p></div>
+            <h1>Modern Dental Care</h1>
             <div className="button-row"><a className="button" href={whatsapp}>Speak to Our Care Team <span aria-hidden="true">↗</span></a><a className="button button-secondary" href="#approach">Learn About Our Approach</a></div>
           </div>
-          <figure className="hero-visual content-frame"><GuideLabel>image · 24px inset</GuideLabel><img src="/kpds-hero.png" alt="Dental professional speaking with a patient in a calm modern clinic" /><figcaption><span>Calm consultations</span><span>Clear next steps</span></figcaption></figure>
+          <aside className="hero-stat content-frame"><span>CARE DESIGNED AROUND YOU</span><strong>Sungai<br />Petani</strong><small>Modern dentistry, clearly explained.</small></aside>
         </div>
       </section>
 
