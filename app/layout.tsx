@@ -20,26 +20,26 @@ export async function generateMetadata(): Promise<Metadata> {
       template: "%s | KPDS",
     },
     description:
-      "Klinik pergigian mesra keluarga di Taman Batik, Sungai Petani, Kedah.",
+      "Modern dental care in Sungai Petani with careful diagnosis, clear planning, and a patient-focused approach.",
     openGraph: {
       type: "website",
-      locale: "ms_MY",
+      locale: "en_MY",
       title: "Klinik Pergigian Dr Syazwan",
-      description: "Rawatan gigi yang selesa, jelas dan dipercayai.",
+      description: "Modern dental care in Sungai Petani.",
       images: [
         {
-          url: new URL("/og.png", metadataBase).toString(),
+          url: new URL("/og-easlo.png", metadataBase).toString(),
           width: 1200,
           height: 630,
-          alt: "Klinik Pergigian Dr Syazwan — rawatan gigi yang selesa, jelas dan dipercayai",
+          alt: "KPDS — Modern dental care in Sungai Petani",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: "Klinik Pergigian Dr Syazwan",
-      description: "Rawatan gigi yang selesa, jelas dan dipercayai.",
-      images: [new URL("/og.png", metadataBase).toString()],
+      description: "Modern dental care in Sungai Petani.",
+      images: [new URL("/og-easlo.png", metadataBase).toString()],
     },
   };
 }
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ms">
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

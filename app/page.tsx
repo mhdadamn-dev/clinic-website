@@ -1,543 +1,132 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Klinik Pergigian Dr Syazwan | Klinik Gigi Sungai Petani",
+  title: "Dental Clinic Sungai Petani | Calm, Modern Dental Care",
   description:
-    "Rawatan pergigian yang selesa dan jelas di Taman Batik, Sungai Petani. Pendakap gigi, implan, veneer, rawatan akar dan penjagaan keluarga.",
+    "Modern dental care in Sungai Petani for families, braces, implants, and general dentistry. Calm consultations, structured treatment planning, and patient-focused care.",
 };
 
+const whatsapp =
+  "https://wa.me/60174791140?text=Hello%20KPDS%2C%20I%20would%20like%20to%20speak%20to%20your%20care%20team.";
+
 const services = [
-  {
-    number: "01",
-    title: "Pendakap gigi",
-    label: "BRACES",
-    description:
-      "Pilihan rawatan untuk susunan gigi yang lebih kemas, dengan penerangan pelan dan tempoh yang jelas.",
-  },
-  {
-    number: "02",
-    title: "Implan gigi",
-    label: "IMPLANT",
-    description:
-      "Gantikan gigi yang hilang dengan penilaian teliti untuk fungsi, keselesaan dan keyakinan jangka panjang.",
-  },
-  {
-    number: "03",
-    title: "Veneer gigi",
-    label: "VENEER",
-    description:
-      "Perbaiki bentuk dan penampilan senyuman melalui pilihan rawatan yang sesuai dengan keadaan gigi anda.",
-  },
-  {
-    number: "04",
-    title: "Rawatan akar gigi",
-    label: "ROOT CANAL",
-    description:
-      "Rawatan untuk menyelamatkan gigi yang rosak atau dijangkiti, sambil membantu mengurangkan ketidakselesaan.",
-  },
-  {
-    number: "05",
-    title: "Scaling & polishing",
-    label: "PREVENTIVE",
-    description:
-      "Penjagaan rutin untuk membersihkan plak dan karang gigi serta membantu mengekalkan gusi yang sihat.",
-  },
-  {
-    number: "06",
-    title: "Pergigian keluarga",
-    label: "FAMILY CARE",
-    description:
-      "Pemeriksaan dan rawatan mesra untuk kanak-kanak, dewasa dan seluruh keluarga dalam suasana yang tenang.",
-  },
+  ["01", "Braces & Aligners", "Orthodontic treatment designed to improve alignment, bite function, and long-term oral health."],
+  ["02", "Dental Implants", "Structured implant planning for missing teeth replacement with long-term stability in mind."],
+  ["03", "General Dentistry", "Routine dental care including examinations, scaling, fillings, gum care, and preventive treatment."],
+  ["04", "Teeth Whitening", "Professional whitening treatment designed for safer, more predictable shade improvement."],
+  ["05", "Family Dental Care", "Dental care for adults, teenagers, and children in a calm clinical environment."],
+  ["06", "Restorative Dentistry", "Treatment focused on restoring comfort, chewing function, and tooth structure."],
 ];
 
-const testimonials = [
-  {
-    quote:
-      "Doktor dan staf sangat mesra. Setiap langkah diterangkan dengan jelas dan saya rasa lebih yakin sepanjang rawatan.",
-    name: "Nurul Nuyun",
-    treatment: "Rawatan akar gigi",
-  },
-  {
-    quote:
-      "Klinik cantik, selesa dan rawatan pun cepat. Anak-anak rasa tenang dan mahu datang semula untuk pemeriksaan.",
-    name: "Zaty Musa",
-    treatment: "Pergigian keluarga",
-  },
-  {
-    quote:
-      "Layanan sangat baik dan pilihan rawatan diterangkan mengikut keperluan saya. Memang sangat disyorkan.",
-    name: "Muhammad Noor",
-    treatment: "Pemutihan gigi",
-  },
+const approach = [
+  ["Diagnosis Before Treatment", "Every treatment begins with understanding the cause, condition, and long-term implications — not just symptoms alone."],
+  ["Evidence-Based Dentistry", "Clinical recommendations are guided by current dental principles, imaging, and patient suitability."],
+  ["Transparent Planning", "We explain findings, options, expected timelines, and costs clearly so patients can make informed decisions comfortably."],
+  ["Long-Term Perspective", "Our focus is not only immediate treatment, but helping patients maintain stable oral health over time."],
+];
+
+const articles = [
+  ["What Is the Difference Between Braces and Aligners?", "5 min read"],
+  ["Are Dental Implants Better Than Bridges?", "4 min read"],
+  ["How Often Should You Visit the Dentist?", "3 min read"],
 ];
 
 const faqs = [
-  {
-    question: "Perlu buat temujanji terlebih dahulu?",
-    answer:
-      "Temujanji digalakkan supaya pasukan kami dapat menyediakan masa yang sesuai untuk anda. Kes kecemasan boleh terus hubungi klinik melalui WhatsApp atau telefon.",
-  },
-  {
-    question: "Adakah rawatan sesuai untuk pesakit yang takut doktor gigi?",
-    answer:
-      "Ya. Beritahu kami tentang kebimbangan anda semasa membuat temujanji. Pasukan kami akan menerangkan proses secara berperingkat dan memberi ruang untuk anda bertanya sebelum rawatan bermula.",
-  },
-  {
-    question: "Berapakah kos rawatan?",
-    answer:
-      "Kos bergantung pada keadaan gigi dan pilihan rawatan. Pemeriksaan awal membantu doktor mencadangkan pelan yang sesuai serta menerangkan anggaran kos dengan lebih tepat.",
-  },
-  {
-    question: "Di manakah lokasi KPDS?",
-    answer:
-      "Kami berada di No. 189, Tingkat Bawah, Jalan Batik 2/1B, Taman Batik, 08000 Sungai Petani, Kedah.",
-  },
+  ["Do I need an appointment before visiting?", "Appointments are encouraged to reduce waiting time and allow sufficient consultation time for each patient."],
+  ["Do you provide braces and aligner treatment?", "Yes. We provide orthodontic consultations for conventional braces, self-ligating braces, and aligners depending on patients preference & suitability."],
+  ["Do you offer dental implant treatment?", "Yes. Implant treatment begins with assessment and planning to evaluate bone condition, oral health, and treatment suitability."],
+  ["Is the clinic suitable for children and families?", "Yes. We provide general dental care for both adults and children in a calm and structured environment."],
+  ["How do I know which treatment is suitable for me?", "A consultation allows the dentist to assess your condition, explain available options, and recommend suitable next steps."],
 ];
+
+function GuideLabel({ children }: { children: React.ReactNode }) {
+  return <span className="guide-label">{children}</span>;
+}
 
 export default function Home() {
   return (
-    <main>
-      <a className="skip-link" href="#kandungan">
-        Langkau ke kandungan utama
-      </a>
+    <main id="top">
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <div className="mockup-key"><span /> Layout guides: content box / padding</div>
 
-      <a className="compare-switch" href="/mydna">
-        <span>Versi baharu</span>
-        Lihat rekaan MyDNA <span aria-hidden="true">↗</span>
-      </a>
-
-      <div className="notice-bar">
-        <div className="shell notice-inner">
-          <p>
-            <span className="status-dot" aria-hidden="true" /> Dibuka setiap
-            hari, 9.00 pagi–5.30 petang
-          </p>
-          <a href="tel:+6044466659">04-446 6659</a>
-        </div>
-      </div>
-
-      <header className="site-header">
-        <div className="shell header-inner">
-          <a className="brand" href="#atas" aria-label="KPDS — halaman utama">
-            <span className="brand-mark" aria-hidden="true">
-              KP
-            </span>
-            <span className="brand-copy">
-              <strong>Klinik Pergigian</strong>
-              <span>Dr Syazwan</span>
-            </span>
+      <header className="site-header section-frame">
+        <GuideLabel>header · 24px padding</GuideLabel>
+        <div className="shell header-inner inner-frame">
+          <a className="brand" href="#top" aria-label="Klinik Pergigian Dr Syazwan home">
+            <span className="brand-mark">KPDS</span>
+            <span className="brand-name"><strong>Klinik Pergigian</strong><small>Dr Syazwan</small></span>
           </a>
-
-          <nav className="desktop-nav" aria-label="Navigasi utama">
-            <a href="#rawatan">Rawatan</a>
-            <a href="#tentang">Tentang kami</a>
-            <a href="#pengalaman">Testimoni</a>
-            <a href="#faq">FAQ</a>
+          <nav className="desktop-nav" aria-label="Main navigation">
+            <a href="#services">Services</a><a href="#locations">Locations</a>
+            <a href="#education">Education</a><a href="#about">About</a>
           </nav>
-
-          <a
-            className="button button-small"
-            href="https://wa.me/60174791140?text=Assalamualaikum%20KPDS%2C%20saya%20ingin%20membuat%20temujanji."
-            target="_blank"
-            rel="noreferrer"
-          >
-            Tempah temujanji <span aria-hidden="true">↗</span>
-          </a>
-
-          <details className="mobile-menu">
-            <summary aria-label="Buka menu">
-              <span />
-              <span />
-              <span />
-            </summary>
-            <nav aria-label="Navigasi mudah alih">
-              <a href="#rawatan">Rawatan</a>
-              <a href="#tentang">Tentang kami</a>
-              <a href="#pengalaman">Testimoni</a>
-              <a href="#faq">Soalan lazim</a>
-              <a
-                className="button"
-                href="https://wa.me/60174791140?text=Assalamualaikum%20KPDS%2C%20saya%20ingin%20membuat%20temujanji."
-              >
-                WhatsApp KPDS
-              </a>
-            </nav>
-          </details>
+          <a className="button button-small" href={whatsapp}>Speak to Our Care Team <span aria-hidden="true">↗</span></a>
+          <details className="mobile-menu"><summary aria-label="Open menu">Menu</summary><nav><a href="#services">Services</a><a href="#locations">Locations</a><a href="#education">Education</a><a href="#about">About</a><a href={whatsapp}>WhatsApp</a></nav></details>
         </div>
       </header>
 
-      <section className="hero" id="atas">
-        <img
-          className="hero-photo"
-          src="/kpds-hero.png"
-          alt="Seorang doktor gigi berbual mesra dengan pesakit di klinik moden"
-        />
-        <div className="hero-wash" aria-hidden="true" />
-        <div className="shell hero-content" id="kandungan">
-          <div className="hero-copy">
-            <p className="eyebrow">KLINIK PERGIGIAN DI SUNGAI PETANI</p>
-            <h1>
-              Rawatan gigi yang selesa, jelas dan <em>dipercayai.</em>
-            </h1>
-            <p className="lead">
-              Daripada pemeriksaan rutin hingga pendakap dan implan, kami
-              membantu anda memahami setiap pilihan sebelum rawatan bermula.
-            </p>
-            <div className="hero-actions">
-              <a
-                className="button"
-                href="https://wa.me/60174791140?text=Assalamualaikum%20KPDS%2C%20saya%20ingin%20membuat%20temujanji."
-                target="_blank"
-                rel="noreferrer"
-              >
-                Tempah temujanji <span aria-hidden="true">↗</span>
-              </a>
-              <a className="text-link" href="#rawatan">
-                Lihat rawatan <span aria-hidden="true">↓</span>
-              </a>
-            </div>
-            <div className="hero-proof" aria-label="Penilaian pesakit">
-              <div className="avatar-stack" aria-hidden="true">
-                <span>NS</span>
-                <span>ZM</span>
-                <span>MN</span>
-              </div>
-              <div>
-                <div className="stars" aria-label="5 daripada 5 bintang">
-                  ★★★★★
-                </div>
-                <p>Dipercayai keluarga di Sungai Petani</p>
-              </div>
-            </div>
+      <section className="hero section-frame" id="main-content">
+        <GuideLabel>hero · 112px vertical padding</GuideLabel>
+        <div className="shell hero-grid inner-frame">
+          <div className="hero-copy content-frame">
+            <GuideLabel>copy · 40px padding</GuideLabel>
+            <p className="eyebrow">DENTAL CLINIC SUNGAI PETANI</p>
+            <h1>Modern dental care in Sungai Petani.</h1>
+            <p className="hero-statement">Thoughtful, structured and patient-focused.</p>
+            <p className="lead">From routine dental care to braces, aligners, and dental implants, we focus on careful diagnosis, clear planning, and long-term oral health — without pressure or unnecessary treatment.</p>
+            <div className="button-row"><a className="button" href={whatsapp}>Speak to Our Care Team <span aria-hidden="true">↗</span></a><a className="button button-secondary" href="#approach">Learn About Our Approach</a></div>
           </div>
-        </div>
-        <div className="hero-note">
-          <span className="hero-note-icon" aria-hidden="true">
-            ✓
-          </span>
-          <div>
-            <strong>Penerangan yang jelas</strong>
-            <span>Fahami pilihan anda sebelum bermula.</span>
-          </div>
+          <figure className="hero-visual content-frame"><GuideLabel>image · 24px inset</GuideLabel><img src="/kpds-hero.png" alt="Dental professional speaking with a patient in a calm modern clinic" /><figcaption><span>Calm consultations</span><span>Clear next steps</span></figcaption></figure>
         </div>
       </section>
 
-      <section className="trust-strip" aria-label="Kelebihan KPDS">
-        <div className="shell trust-grid">
-          <div>
-            <span className="trust-number">01</span>
-            <p>
-              <strong>Mesra & selesa</strong>
-              Suasana tenang untuk seisi keluarga
-            </p>
-          </div>
-          <div>
-            <span className="trust-number">02</span>
-            <p>
-              <strong>Rawatan berkualiti</strong>
-              Pelan yang sesuai dengan keperluan anda
-            </p>
-          </div>
-          <div>
-            <span className="trust-number">03</span>
-            <p>
-              <strong>Menepati masa</strong>
-              Temujanji yang diurus dengan baik
-            </p>
-          </div>
+      <section className="answer-section section-frame">
+        <GuideLabel>AEO block · 48px padding</GuideLabel>
+        <div className="shell answer-grid inner-frame">
+          <div><p className="eyebrow">QUICK ANSWER</p><h2>What does your clinic provide?</h2></div>
+          <p>We provide modern dental care in Sungai Petani for children, adults, and families, including braces, aligners, and dental implants. Our approach focuses on accurate diagnosis, evidence-based treatment planning, and clear communication so patients understand their options before making decisions.</p>
         </div>
       </section>
 
-      <section className="section services-section" id="rawatan">
-        <div className="shell">
-          <div className="section-heading split-heading">
-            <div>
-              <p className="eyebrow">RAWATAN KAMI</p>
-              <h2>Penjagaan untuk setiap senyuman.</h2>
-            </div>
-            <p>
-              Setiap senyuman mempunyai keperluan berbeza. Kami mulakan dengan
-              pemeriksaan menyeluruh dan penerangan yang mudah difahami.
-            </p>
-          </div>
+      <section className="trust section-frame" aria-label="Clinic trust points"><GuideLabel>trust strip · 24px padding</GuideLabel><div className="shell trust-grid inner-frame">{["Experienced clinical team","Registered dental professionals","Modern digital imaging and treatment methods","Patient-focused consultations and planning"].map((item,index)=><div key={item}><span>0{index+1}</span><p>{item}</p></div>)}</div></section>
 
-          <div className="services-grid">
-            {services.map((service) => (
-              <article className="service-card" key={service.number}>
-                <div className="service-topline">
-                  <span>{service.number}</span>
-                  <span>{service.label}</span>
-                </div>
-                <div className={`service-symbol symbol-${service.number}`} aria-hidden="true">
-                  <span />
-                </div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <a href="#hubungi" aria-label={`Tanya tentang ${service.title}`}>
-                  Tanya tentang rawatan <span aria-hidden="true">↗</span>
-                </a>
-              </article>
-            ))}
-          </div>
+      <section className="section section-frame" id="services">
+        <GuideLabel>services · 112px vertical padding</GuideLabel>
+        <div className="shell inner-frame"><div className="section-head"><div><p className="eyebrow">OUR SERVICES</p><h2>Our clinical services</h2></div><p>Carefully planned treatment for everyday needs, complex cases and long-term oral health.</p></div>
+          <div className="card-grid">{services.map(([number,title,description])=><article className="service-card content-frame" key={title}><GuideLabel>card · 32px padding</GuideLabel><span className="card-number">{number}</span><div className="service-mark" aria-hidden="true"><span /></div><h3>{title}</h3><p>{description}</p><a className="text-link" href="#contact">Learn More <span aria-hidden="true">→</span></a></article>)}</div>
         </div>
       </section>
 
-      <section className="section about-section" id="tentang">
-        <div className="shell about-grid">
-          <div className="about-art" aria-label="Ruang konsultasi KPDS yang mesra">
-            <div className="about-image">
-              <img
-                src="/kpds-hero.png"
-                alt="Doktor gigi menerangkan rawatan kepada seorang pesakit"
-              />
-            </div>
-            <div className="about-badge">
-              <strong>5★</strong>
-              <span>Penjagaan dengan sentuhan manusia</span>
-            </div>
-          </div>
+      <section className="section approach-section section-frame" id="approach">
+        <GuideLabel>approach · 104px vertical padding</GuideLabel>
+        <div className="shell approach-layout inner-frame"><div className="sticky-heading"><p className="eyebrow">HOW WE WORK</p><h2>How we approach care</h2><p>Clear thinking first. Treatment decisions second.</p></div><div className="approach-list">{approach.map(([title,description],index)=><article className="approach-card content-frame" key={title}><GuideLabel>row · 28px padding</GuideLabel><span>0{index+1}</span><div><h3>{title}</h3><p>{description}</p></div></article>)}</div></div>
+      </section>
 
-          <div className="about-copy">
-            <p className="eyebrow">KENAPA KPDS?</p>
-            <h2>Kami mahu anda rasa tenang sebelum duduk di kerusi rawatan.</h2>
-            <p className="lead-small">
-              Pengalaman pergigian yang baik bermula dengan rasa didengari.
-              Sebab itu kami memberi ruang untuk anda bertanya, memahami pilihan
-              dan membuat keputusan dengan yakin.
-            </p>
-            <ul className="check-list">
-              <li>
-                <span aria-hidden="true">✓</span>
-                <div>
-                  <strong>Penerangan tanpa jargon</strong>
-                  <p>Langkah rawatan diterangkan dalam bahasa yang mudah.</p>
-                </div>
-              </li>
-              <li>
-                <span aria-hidden="true">✓</span>
-                <div>
-                  <strong>Pelan yang diperibadikan</strong>
-                  <p>Cadangan berdasarkan keadaan dan keutamaan anda.</p>
-                </div>
-              </li>
-              <li>
-                <span aria-hidden="true">✓</span>
-                <div>
-                  <strong>Mesra kanak-kanak</strong>
-                  <p>Pendekatan perlahan dan positif untuk pesakit kecil.</p>
-                </div>
-              </li>
-            </ul>
-            <a className="text-link dark-link" href="#proses">
-              Lihat cara lawatan anda <span aria-hidden="true">→</span>
-            </a>
-          </div>
+      <section className="section section-frame" id="about">
+        <GuideLabel>doctors · 112px vertical padding</GuideLabel>
+        <div className="shell inner-frame"><div className="section-head"><div><p className="eyebrow">MEET THE TEAM</p><h2>Our doctors</h2></div><p>Patient-centred dentistry supported by structured clinical planning.</p></div>
+          <article className="doctor-card content-frame"><GuideLabel>profile · 40px padding</GuideLabel><div className="doctor-placeholder" aria-hidden="true"><span>Profile image</span></div><div><span className="pending-chip">Content to confirm</span><h3>Dr. [Name]</h3><p className="credentials">DDS / BDS / Relevant Credentials</p><p>Focused on patient-centred dentistry with interests in restorative treatment, braces, and long-term treatment planning.</p><a className="text-link" href="#contact">View Profile <span aria-hidden="true">→</span></a></div></article>
         </div>
       </section>
 
-      <section className="section process-section" id="proses">
-        <div className="shell">
-          <div className="section-heading centered-heading">
-            <p className="eyebrow">MUDAH & JELAS</p>
-            <h2>Tiga langkah ke senyuman yang lebih yakin.</h2>
-            <p>
-              Daripada mesej pertama hingga susulan, anda sentiasa tahu apa yang
-              akan berlaku seterusnya.
-            </p>
-          </div>
-          <ol className="process-grid">
-            <li>
-              <span className="process-number">1</span>
-              <div className="process-line" aria-hidden="true" />
-              <h3>Hubungi kami</h3>
-              <p>Beritahu kami keperluan anda melalui WhatsApp atau telefon.</p>
-            </li>
-            <li>
-              <span className="process-number">2</span>
-              <div className="process-line" aria-hidden="true" />
-              <h3>Pemeriksaan & penerangan</h3>
-              <p>Doktor menilai keadaan gigi dan menerangkan pilihan rawatan.</p>
-            </li>
-            <li>
-              <span className="process-number">3</span>
-              <h3>Mulakan dengan yakin</h3>
-              <p>Pilih pelan yang sesuai dan teruskan mengikut keselesaan anda.</p>
-            </li>
-          </ol>
-        </div>
+      <section className="section education-section section-frame" id="education">
+        <GuideLabel>education · 104px vertical padding</GuideLabel>
+        <div className="shell inner-frame"><div className="section-head"><div><p className="eyebrow">PATIENT EDUCATION</p><h2>Learn before you decide</h2></div><p>Plain-language guidance for more informed conversations about your oral health.</p></div><div className="article-grid">{articles.map(([title,time],index)=><article className="article-card content-frame" key={title}><GuideLabel>article · 28px padding</GuideLabel><span className="article-index">0{index+1}</span><p className="article-type">GUIDE</p><h3>{title}</h3><div><span>{time}</span><a className="text-link" href="#contact">Read Article →</a></div></article>)}</div></div>
       </section>
 
-      <section className="section testimonials-section" id="pengalaman">
-        <div className="shell">
-          <div className="section-heading split-heading testimonial-heading">
-            <div>
-              <p className="eyebrow">PENGALAMAN PESAKIT</p>
-              <h2>Kata-kata yang membuat kami terus tersenyum.</h2>
-            </div>
-            <div className="rating-lockup">
-              <span>5.0</span>
-              <div>
-                <div className="stars">★★★★★</div>
-                <p>Ulasan pesakit KPDS</p>
-              </div>
-            </div>
-          </div>
-          <div className="testimonial-grid">
-            {testimonials.map((testimonial, index) => (
-              <figure className="testimonial-card" key={testimonial.name}>
-                <span className="quote-mark" aria-hidden="true">
-                  “
-                </span>
-                <blockquote>{testimonial.quote}</blockquote>
-                <figcaption>
-                  <span className="patient-initials" aria-hidden="true">
-                    {testimonial.name
-                      .split(" ")
-                      .map((part) => part[0])
-                      .join("")
-                      .slice(0, 2)}
-                  </span>
-                  <span>
-                    <strong>{testimonial.name}</strong>
-                    <small>{testimonial.treatment}</small>
-                  </span>
-                  <span className="review-index">0{index + 1}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-          <p className="review-note">
-            Testimoni dipendekkan untuk paparan mockup. Hasil rawatan berbeza
-            mengikut individu.
-          </p>
-        </div>
+      <section className="section section-frame" id="locations">
+        <GuideLabel>location · 104px vertical padding</GuideLabel>
+        <div className="shell location-card inner-frame"><div className="map-panel content-frame"><GuideLabel>map placeholder · 24px padding</GuideLabel><div className="map-grid" aria-hidden="true"><span className="map-pin">KPDS</span></div></div><div className="location-copy content-frame"><GuideLabel>copy · 40px padding</GuideLabel><p className="eyebrow">OUR LOCATIONS</p><h2>Sungai Petani</h2><p>Comfortable, appointment-based dental care serving Sungai Petani and nearby communities.</p><address>189, Ground Floor, Jalan Batik 2/1B<br />Taman Batik, 08000 Sungai Petani, Kedah</address><a className="button button-secondary" href="https://www.google.com/maps/search/?api=1&query=Klinik+Pergigian+Dr+Syazwan+Taman+Batik">View Clinic <span aria-hidden="true">↗</span></a></div></div>
       </section>
 
-      <section className="section faq-section" id="faq">
-        <div className="shell faq-grid">
-          <div className="faq-intro">
-            <p className="eyebrow">SOALAN LAZIM</p>
-            <h2>Masih ada yang bermain di fikiran?</h2>
-            <p>
-              Kami sedia membantu. Mulakan dengan jawapan ringkas ini atau
-              terus berbual dengan pasukan kami.
-            </p>
-            <a className="text-link dark-link" href="tel:+6044466659">
-              Hubungi 04-446 6659 <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <div className="faq-list">
-            {faqs.map((faq, index) => (
-              <details key={faq.question} open={index === 0}>
-                <summary>
-                  <span>{faq.question}</span>
-                  <i aria-hidden="true" />
-                </summary>
-                <p>{faq.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
+      <section className="section faq-section section-frame" id="faq">
+        <GuideLabel>FAQ · 104px vertical padding</GuideLabel>
+        <div className="reading-width inner-frame"><div className="faq-heading"><p className="eyebrow">COMMON QUESTIONS</p><h2>Answers before your visit</h2></div><div className="faq-list">{faqs.map(([question,answer],index)=><details className="content-frame" key={question} open={index===0}><summary><span>{question}</span><i aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></div>
       </section>
 
-      <section className="cta-section" id="hubungi">
-        <div className="shell cta-inner">
-          <div>
-            <p className="eyebrow">SEDIA UNTUK BERMULA?</p>
-            <h2>
-              Langkah pertama ke <em>senyuman lebih yakin.</em>
-            </h2>
-          </div>
-          <div className="cta-copy">
-            <p>
-              Ceritakan apa yang anda perlukan. Pasukan kami akan membantu
-              mencadangkan masa lawatan yang sesuai.
-            </p>
-            <a
-              className="button button-light"
-              href="https://wa.me/60174791140?text=Assalamualaikum%20KPDS%2C%20saya%20ingin%20membuat%20temujanji."
-              target="_blank"
-              rel="noreferrer"
-            >
-              WhatsApp KPDS <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
-      </section>
+      <section className="final-cta section-frame" id="contact"><GuideLabel>final CTA · 80px padding</GuideLabel><div className="shell cta-inner inner-frame"><div><p className="eyebrow">READY WHEN YOU ARE</p><h2>If you’d like to understand your options, speak to us.</h2></div><a className="button button-light" href={whatsapp}>Speak to Our Care Team <span aria-hidden="true">↗</span></a></div></section>
 
-      <footer className="site-footer">
-        <div className="shell footer-main">
-          <div className="footer-brand">
-            <a className="brand brand-light" href="#atas">
-              <span className="brand-mark" aria-hidden="true">
-                KP
-              </span>
-              <span className="brand-copy">
-                <strong>Klinik Pergigian</strong>
-                <span>Dr Syazwan</span>
-              </span>
-            </a>
-            <p>
-              Keselesaan, rawatan berkualiti dan tepati masa—untuk pengalaman
-              pergigian yang lebih baik.
-            </p>
-          </div>
-          <div>
-            <h3>Alamat</h3>
-            <p>
-              189, Tingkat Bawah, Jalan Batik 2/1B,
-              <br /> Taman Batik, 08000 Sungai Petani, Kedah
-            </p>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Klinik+Pergigian+Dr+Syazwan+Taman+Batik"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Buka di Google Maps ↗
-            </a>
-          </div>
-          <div>
-            <h3>Hubungi</h3>
-            <a href="tel:+6044466659">04-446 6659</a>
-            <a href="https://wa.me/60174791140">017-479 1140</a>
-            <a href="mailto:klinikpergigiandrsyazwan@gmail.com">
-              klinikpergigiandrsyazwan@gmail.com
-            </a>
-          </div>
-          <div>
-            <h3>Waktu operasi</h3>
-            <p>
-              Isnin–Ahad
-              <br /> 9.00 pagi–5.30 petang
-            </p>
-            <span className="open-label">
-              <span className="status-dot" aria-hidden="true" /> Dibuka setiap
-              hari
-            </span>
-          </div>
-        </div>
-        <div className="shell footer-bottom">
-          <p>© 2026 Klinik Pergigian Dr Syazwan. Mockup homepage.</p>
-          <div>
-            <a href="https://www.instagram.com/klinikpergigiandrsyazwan/">
-              Instagram
-            </a>
-            <a href="#atas">Kembali ke atas ↑</a>
-          </div>
-        </div>
-      </footer>
-
-      <a
-        className="floating-whatsapp"
-        href="https://wa.me/60174791140?text=Assalamualaikum%20KPDS%2C%20saya%20ingin%20membuat%20temujanji."
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Tempah temujanji melalui WhatsApp"
-      >
-        <span aria-hidden="true">WA</span>
-        <strong>Tempah sekarang</strong>
-      </a>
+      <footer className="site-footer section-frame"><GuideLabel>footer · 72px padding</GuideLabel><div className="shell footer-grid inner-frame"><div className="footer-intro"><a className="brand brand-light" href="#top"><span className="brand-mark">KPDS</span><span className="brand-name"><strong>Klinik Pergigian</strong><small>Dr Syazwan</small></span></a><p>Modern dental care with clear planning and a patient-focused approach.</p></div><div><h3>Clinic Details</h3><p>189, Ground Floor, Jalan Batik 2/1B<br />Taman Batik, Sungai Petani</p><a href="tel:+6044466659">04-446 6659</a></div><div><h3>Operating Hours</h3><p>Monday–Sunday<br />9.00am–5.30pm</p><a href={whatsapp}>WhatsApp Contact ↗</a></div><div><h3>Information</h3><a href="#locations">Google Maps</a><a href="#">Regulatory Information</a><a href="#">Privacy Policy</a><a href="#">Sitemap</a><a href="#education">Educational Resources</a></div></div><div className="shell footer-bottom"><p>© 2026 Klinik Pergigian Dr Syazwan. Homepage mockup.</p><a href="#top">Back to top ↑</a></div></footer>
     </main>
   );
 }
