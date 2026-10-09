@@ -1,8 +1,8 @@
-# vinext-starter
+# Clinic Website
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+Static website project for Klinik Pergigian Dr Syazwan.
+
+The existing homepage prototype runs on [Vinext](https://github.com/cloudflare/vinext). The Hostinger-ready static website will be built under `release`; see `STATIC_RELEASE_PLAN.md` for the launch architecture and route manifest.
 
 ## Prerequisites
 
